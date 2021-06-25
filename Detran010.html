@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN RJ</title>
+    <style>  
+    body {
+        background-color: rgb(17, 141, 37);
+        font: normal 30pt arial;
+
+    }
+    ::
+        input {
+            font: normal 18pt arial;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <h1> Sistema de multa!</h1>
+    Velocidade do carro  <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="verificar" onclick="calcular ()">
+    <div id="res">
+
+    </div>
+<script>
+    function calcular() {
+    var txtv= window.document.getElementById('txtvel')
+    var res = window.document.getElementById('res')
+    var vel = Number(txtv.value)
+    res.innerHTML = `<p>sua velocidade e de <strong> ${vel}km/h</strong></p>`
+    
+        if (vel < 60){//condição para mensagem  para velocidade abaixo de 60km/h
+         res.innerHTML+='<p><strong> Boa viajem!</strong></p>'}
+    
+         if(vel > 60) { //condição para mensagem para velocidade acima de 60km/h
+        res.innerHTML += '<p>você esta <strong>MULTADO!</strong>, por excesso de velocidade!</p>'}
+    
+        if (vel =  60) {
+            res.innerHTML = '<p><strong> VOCÊ ESTÁ NO LIMITE DE VELOCIDADE</strong></p>'
+        }
+    res.innerHTML += `<P>Dirija sempre com cinto de seguraça!</p>`
+
+
+
+    }
+</script>
+</body>
+</html>
